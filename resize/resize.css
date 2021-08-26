@@ -1,0 +1,60 @@
+html, body {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.g-outer {
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    background-image: url(pic1.jpg);
+    overflow: hidden;
+}
+
+.g-inner {
+    height: 340px;
+    background-image: url(pic2.jpg);
+    resize: horizontal;
+    overflow: scroll;
+    max-width: 640px;
+    min-width: 10px;
+    
+}
+
+.width-change {
+    animation: widthchange 2s infinite alternate linear;
+}
+
+.mask-change {
+    mask: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+    mask-size: 200% 100%;
+    animation: maskChange 2s infinite alternate linear;
+}
+
+@keyframes widthchange {
+    0% {
+        width: 650px;
+    }
+    100% {
+        width: 300px;
+    }
+}
+
+@keyframes maskChange {
+    0% {
+        mask-position: -100% 0;
+    }
+    100% {
+        mask-position: 0 0;
+    }
+}
+p {
+    width: 500px;
+    height: 500px;
+    resize: vertical;
+    overflow: scroll;
+    position: fixed bottom;
+}
